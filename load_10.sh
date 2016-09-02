@@ -1,0 +1,11 @@
+#!/bin/bash
+
+APPNAME="ETC/ETH Split"
+PROG=token-chainsplit
+TARGET_ID=0x31100002 #Nano S
+#TARGET_ID=0x31000002 #Blue
+APP_LOAD_PARAMS="--appFlags 0x40 --path "44'/60'" --path "44'/61'" --curve secp256k1 --signature 30450221009cef8dfecf1ec5dad3556a1b59464e514083be1e2820f2534d876323b818c07a02205d72b514142ae85be723c4fee64e305a57b8296cd79704b06cfdfa80870b7b3e"
+ICON=0100ffffff0000000000000000000080008000c000c000e000c0002000c000c0008000000000000000
+
+python -m ledgerblue.loadApp --targetId $TARGET_ID --fileName bin/1.1/$PROG.hex --appName "$APPNAME" --icon $ICON $APP_LOAD_PARAMS
+
